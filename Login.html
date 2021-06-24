@@ -1,0 +1,82 @@
+<html>
+<head>
+<script>
+	function validation()
+	{
+		with(document)
+		{
+			
+len1 =getElementById("uname").value.length;
+			
+len2 =getElementById("psword").value.length;
+			
+if(len1==0 && len2==0)
+
+			{
+				//alert("username and password not entered");
+				getElementById("botherror").innerHTML ="username and password not entered";
+			}
+			
+else if(len1==0)
+
+			{
+				//alert("username is not entered look at");
+				getElementById("usrerror").innerHTML ="username is not entered";
+			
+}
+			else if(len2==0)
+
+			{
+				//alert("password is not entered");
+				getElementById("passwderror").innerHTML ="password is not entered";
+			}
+			
+else
+			
+{
+
+				
+if (getElementById("uname").value == "Tom" && getElementById("psword").value == "Jerry")
+
+				alert("Login Successful");
+				
+else
+				
+alert("Invalid User name or password");
+						
+ 			}   
+		}
+	}
+	function errRemove()
+	{
+		with(document)
+		{
+			getElementById("usrerror").innerHTML="";
+			getElementById("passwderror").innerHTML="";
+			getElementById("botherror").innerHTML="";
+		}
+	}
+</script>
+</head>
+	<body>
+		<h1>Employee Login</h1>			
+		<table>
+		<tr>
+			<td>Username: </td>
+			<td><input type="text" id="uname" onchange="errRemove()"></td>
+			<td><div id="usrerror" style="color:red"> </div> </td>
+		</tr>
+		<tr>
+			<td>Password:</td>
+			<td><input type ="password" id="psword" onchange="errRemove()"></td>
+			<td><div id="passwderror" style="color:red"> </div> </td>
+		</tr>
+		<tr>
+			<td colspan=3><div id="botherror" style="color:red"> </div> </td>
+		</tr>
+		</table>
+		<input type="Submit" value="Click to submit" onClick="validation()"/>
+		<a href="ForgotPass.html">Forgot Password</a>
+		
+	</body>
+</html>
